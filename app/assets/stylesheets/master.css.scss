@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -27,4 +28,10 @@ body {
   background:url('/assets/use_your_illusion.png');
   border-radius: 0;
   box-shadow: 5px 5px 5px #B0A7A4;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #C9B416;
+  font-family: 'fira_sansmedium_italic', sans-serif;
+  font-size:26px;
 }
