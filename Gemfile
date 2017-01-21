@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'will_paginate', '~> 3.1.0'
+
 gem 'simple_form'
 
 gem "geocoder", "1.3.4"
