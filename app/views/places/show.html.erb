@@ -86,3 +86,26 @@
     </blockquote>
   </div>
 <% end %>
+
+  <div class="clear"></div>
+
+  <div class="booyah-box col-xs-10 col-xs-offset-1">
+    <h1>Photos</h1>
+    <% @place.photos.each do |photo| %>
+      <div>
+        <blockquote>
+          <b><%= image_tag photo.picture %></b> -
+            <%= photo.caption %>
+          <small><%= photo.user.email %></small>
+        </blockquote>
+      </div>
+    <% end %>
+ 
+    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+      <%= f.input :picture %>
+      <%= f.input :caption %>
+      <br />
+      <%= f.submit 'Post Photo', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
