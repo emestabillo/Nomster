@@ -12,6 +12,8 @@ gem 'rails_12factor', group: :production
 
 gem 'carrierwave', '~> 1.0'
 
+gem "fog"
+
 #gem 'turbolinks'
 
 gem 'bootstrap-sass', '~> 3.3.5.1'
