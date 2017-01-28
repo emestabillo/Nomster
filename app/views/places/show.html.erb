@@ -32,7 +32,33 @@
 
     <br />
 
-    <div class="pull-right">
+<div class="pull-right">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#photos">
+    Add a Photo
+  </button>
+
+<!-- Modal -->
+<div class="modal fade" id="photos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a Photo</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+          <%= f.input :picture %>
+          <%= f.input :caption %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= f.submit 'Post Photo', class: 'btn btn-primary' %>
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
     <% if current_user && current_user == @place.user %>
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
       <%= link_to 'Destroy', place_path(@place), method: :delete, data: {confirm: 'Are you sure you want to delete this?'}, class: 'btn btn-danger' %>
@@ -42,8 +68,9 @@
 
 <div class="clear"></div>
 
+<div class="booyah-box col-xs-10 col-xs-offset-1">
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,7 +78,6 @@
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-
         <div class="modal-body">
           <%= f.input :message %>
           <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
@@ -65,13 +91,7 @@
   </div>
 </div>
 
-<div class="col-xs-10 col-xs-offset-1">
-  <h1 class="pull-left">Comments</h1>
-  <!-- Button trigger modal -->
-  <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
-    Add a comment
-  </button>
-</div>
+  <h2 class="pull-left">Comments</h2>
 
 <div class="clear"></div>
 
@@ -86,11 +106,17 @@
     </blockquote>
   </div>
 <% end %>
-
+<br />
+<!-- Button trigger modal -->
+  <button class="row realign btn btn-primary btn-primary" data-toggle="modal" data-target="#comment">
+    Add a comment
+  </button>
+</div>
+</div>
   <div class="clear"></div>
 
   <div class="booyah-box col-xs-10 col-xs-offset-1">
-    <h1>Photos</h1>
+    <h2>Photos</h2>
     <% @place.photos.each do |photo| %>
       <div>
         <blockquote>
@@ -100,12 +126,6 @@
         </blockquote>
       </div>
     <% end %>
- 
-    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-      <%= f.input :picture %>
-      <%= f.input :caption %>
-      <br />
-      <%= f.submit 'Post Photo', class: 'btn btn-primary' %>
   </div>
-<% end %>
+
 

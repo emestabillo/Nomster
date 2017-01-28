@@ -11,7 +11,7 @@
     <div class="item active">
       <%= image_tag 'slider1.jpg', class: 'img-responsive' %>
       <div class="carousel-caption">
-        Best dessert places in New York
+        Looking for desserts in New York?
       </div>
     </div>
 
@@ -43,6 +43,8 @@
 
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-10 col-xs-offset-1">
+   
+
     <h1><%= link_to place.name, place_path(place) %></h1>
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
@@ -62,6 +64,13 @@
         </blockquote>
       </div>
     <% end %>
+
+ <% if place.photos.last.present? %>
+      <div>
+          <%= image_tag place.photos.last.picture %>  
+      </div>
+    <% end %>
+  
   </div>  
 <% end %>
 
