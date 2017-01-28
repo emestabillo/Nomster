@@ -68,7 +68,7 @@
 
 <div class="clear"></div>
 
-<div class="booyah-box col-xs-10 col-xs-offset-1">
+<div class="relative booyah-box col-xs-10 col-xs-offset-1">
 <!-- Modal -->
 <div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -106,11 +106,13 @@
     </blockquote>
   </div>
 <% end %>
-<br />
+ 
+<div class="absolute">
 <!-- Button trigger modal -->
-  <button class="row realign btn btn-primary btn-primary" data-toggle="modal" data-target="#comment">
+  <button class="btn btn-primary btn-primary" data-toggle="modal" data-target="#comment">
     Add a comment
   </button>
+</div>
 </div>
 </div>
   <div class="clear"></div>

@@ -99,14 +99,16 @@ blockquote p {
   box-shadow: 0px 3px 8px #2a2a2a;
 }
 
-.row {
-  position:relative; 
+.relative {
+  position: relative;
 }
 
-.realign {
+.absolute {
   position: absolute;
-  right:    30px;
+  right:    20px;
   bottom:   20px;
 }
+
+
 
 
