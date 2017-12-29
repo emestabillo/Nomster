@@ -17,7 +17,7 @@ gem "fog"
 #gem 'turbolinks'
 
 gem 'bootstrap-sass', '~> 3.3.5.1'
-gem 'sprockets', '2.11.0'
+gem 'sprockets', '2.11.3'
 gem 'sass-rails'
 gem 'devise', '>= 3.2.4'
 
